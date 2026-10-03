@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">CEMS</div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#registrations">Registrations</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+            <p class="small-title">COLLEGE EVENT MANAGEMENT SYSTEM</p>
+
+            <h1>Manage. Participate. <span>Celebrate.</span></h1>
+
+            <p>
+                A simple and efficient platform to manage college events,
+                registrations and student participation.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#events" class="btn">Explore Events</a>
+                <a href="#register" class="btn secondary">Register Now</a>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Features -->
+    <section class="features">
+
+        <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <h3>Event Management</h3>
+            <p>Create and manage college events easily.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📝</div>
+            <h3>Easy Registration</h3>
+            <p>Students can register for events quickly.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">👥</div>
+            <h3>Student Management</h3>
+            <p>Keep track of registered participants.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">💻</div>
+            <h3>OOP Based Project</h3>
+            <p>Designed as an OOP with C++ course project.</p>
+        </div>
+
+    </section>
+
+
+    <!-- Events Section -->
+    <section id="events" class="section">
+
+        <div class="section-heading">
+            <p>DISCOVER</p>
+            <h2>Upcoming Events</h2>
+            <span></span>
+        </div>
+
+        <!-- Search -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search events..."
+                onkeyup="searchEvents()"
+            >
+        </div>
+
+        <div class="event-container" id="eventContainer">
+
+            <div class="event-card">
+                <div class="event-image technical">
+                    <span>TECH</span>
+                </div>
+
+                <div class="event-content">
+                    <span class="event-type">Technical</span>
+                    <h3>Tech Fest 2026</h3>
+
+                    <p>
+                        Explore technology, coding and innovative ideas.
+                    </p>
+
+                    <div class="event-info">
+                        <span>📅 15 Oct 2026</span>
+                        <span>📍 Main Auditorium</span>
+                    </div>
+
+                    <button
+                        class="register-btn"
+                        onclick="selectEvent('Tech Fest 2026')">
+                        Register
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="event-card">
+                <div class="event-image cultural">
+                    <span>CULTURE</span>
+                </div>
+
+                <div class="event-content">
+                    <span class="event-type">Cultural</span>
+                    <h3>Annual Cultural Fest</h3>
+
+                    <p>
+                        Experience music, dance, art and cultural performances.
+                    </p>
+
+                    <div class="event-info">
+                        <span>📅 20 Oct 2026</span>
+                        <span>📍 College Ground</span>
+                    </div>
+
+                    <button
+                        class="register-btn"
+                        onclick="selectEvent('Annual Cultural Fest')">
+                        Register
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="event-card">
+                <div class="event-image sports">
+                    <span>SPORTS</span>
+                </div>
+
+                <div class="event-content">
+                    <span class="event-type">Sports</span>
+                    <h3>Annual Sports Meet</h3>
+
+                    <p>
+                        Participate in exciting indoor and outdoor sports.
+                    </p>
+
+                    <div class="event-info">
+                        <span>📅 25 Oct 2026</span>
+                        <span>📍 Sports Ground</span>
+                    </div>
+
+                    <button
+                        class="register-btn"
+                        onclick="selectEvent('Annual Sports Meet')">
+                        Register
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="event-card">
+                <div class="event-image workshop">
+                    <span>WORKSHOP</span>
+                </div>
+
+                <div class="event-content">
+                    <span class="event-type">Workshop</span>
+                    <h3>AI & Future Technology</h3>
+
+                    <p>
+                        Learn about artificial intelligence and emerging technologies.
+                    </p>
+
+                    <div class="event-info">
+                        <span>📅 30 Oct 2026</span>
+                        <span>📍 Seminar Hall</span>
+                    </div>
+
+                    <button
+                        class="register-btn"
+                        onclick="selectEvent('AI & Future Technology')">
+                        Register
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Registration Section -->
+    <section id="register" class="registration-section">
+
+        <div class="section-heading light">
+            <p>JOIN US</p>
+            <h2>Event Registration</h2>
+            <span></span>
+        </div>
+
+        <div class="form-container">
+
+            <form id="registrationForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Student Name</label>
+                        <input
+                            type="text"
+                            id="studentName"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Student ID</label>
+                        <input
+                            type="text"
+                            id="studentId"
+                            placeholder="Enter student ID"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Department</label>
+
+                        <select id="department" required>
+                            <option value="">Select Department</option>
+                            <option>CSE</option>
+                            <option>ECE</option>
+                            <option>EEE</option>
+                            <option>MECH</option>
+                            <option>CIVIL</option>
+                            <option>AIML</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter email"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Select Event</label>
+
+                        <select id="eventName" required>
+                            <option value="">Select Event</option>
+                            <option>Tech Fest 2026</option>
+                            <option>Annual Cultural Fest</option>
+                            <option>Annual Sports Meet</option>
+                            <option>AI & Future Technology</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+                    Submit Registration
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Registrations -->
+    <section id="registrations" class="section">
+
+        <div class="section-heading">
+            <p>ADMIN PANEL</p>
+            <h2>Registered Students</h2>
+            <span></span>
+        </div>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Student ID</th>
+                        <th>Department</th>
+                        <th>Event</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="registrationTable">
+                    <!-- JavaScript will add registrations here -->
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="registration-count">
+            Total Registrations:
+            <strong id="registrationCount">0</strong>
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+
+        <div class="section-heading light">
+            <p>PROJECT INFORMATION</p>
+            <h2>About the Project</h2>
+            <span></span>
+        </div>
+
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <h3>College Event Management System</h3>
+
+                <p>
+                    The College Event Management System is a web-based project
+                    designed to simplify the management of college events and
+                    student registrations.
+                </p>
+
+                <p>
+                    This project is developed as part of the
+                    <strong>Object-Oriented Programming with C++</strong>
+                    course and demonstrates the practical application of
+                    object-oriented programming concepts.
+                </p>
+
+            </div>
+
+
+            <div class="oop-box">
+
+                <h3>OOP Concepts Used</h3>
+
+                <ul>
+                    <li>✓ Classes and Objects</li>
+                    <li>✓ Encapsulation</li>
+                    <li>✓ Inheritance</li>
+                    <li>✓ Polymorphism</li>
+                    <li>✓ Abstraction</li>
+                    <li>✓ File Handling</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>CEMS</h2>
+
+            <p>
+                College Event Management System
+            </p>
+
+            <p>
+                Object-Oriented Programming with C++
+            </p>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 College Event Management System. All Rights Reserved.
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
